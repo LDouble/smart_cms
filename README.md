@@ -1,6 +1,7 @@
 # smart_cms
 
 基于`python3.6`和`Django2.2`。   
+## demo
 [IPv6环境 | 基于IPv6个性化定制系统](http://[2001:da8:270:2018:f816:3eff:fef4:9a8e])
 
 # 功能说明
