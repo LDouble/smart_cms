@@ -27,6 +27,11 @@ class GlobalSettings(object):
                   "sourcedownload": "fa fa-download", "trade": "fa fa-shopping-cart", "users": "fa fa-user",
                   "wechatuser": "fa fa-user", "knowledgebase": "fa fa-book", "questionanswer": "fa fa-question-circle"}
 
+    def get_site_menu(self):
+        return (
+            {'title': 'API测试', 'url': "/apis", 'icon': "fa fa-book"},
+        )
+
     @filter_hook
     def get_nav_menu(self):
         site_menu = list(self.get_site_menu() or [])
