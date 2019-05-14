@@ -1,0 +1,46 @@
+{% extends 'slide.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">设备使用情况</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>日志来源</th>
+                            <th>日期</th>
+                            <th>详细信息</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in data %}
+                            <tr>
+                                <th>{{ item.pk }}</th>
+                                <th>{{ item.forniture_type }}</th>
+                                <th>{{ item.day }}</th>
+                                <th>{{ item.info }}</th>
+                                <th><a href=" ">删除</a></th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block jscontent %}
+    {% load static %}
+    <script src="{% static 'vendor/datatables/jquery.dataTables.min.js' %} "></script>
+    <script src="{% static 'vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{% static 'js/demo/datatables-demo.js' %}"></script>
+{% endblock %}

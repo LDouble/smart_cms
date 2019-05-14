@@ -1,0 +1,48 @@
+{% extends 'slide.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">地址列表</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>省</th>
+                            <th>市</th>
+                            <th>详细地址</th>
+                            <th>联系电话</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in list %}
+                            <tr>
+                                <th>{{ item.name }}</th>
+                                <th>{{ item.province }}</th>
+                                <th>{{ item.city }}</th>
+                                <th>{{ item.detail }}</th>
+                                <th>{{ item.telphone }}</th>
+                                <th><a href=" {% url 'user:address_del' item.pk %}">删除</a></th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block jscontent %}
+    {% load static %}
+    <script src="{% static 'vendor/datatables/jquery.dataTables.min.js' %} "></script>
+    <script src="{% static 'vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{% static 'js/demo/datatables-demo.js' %}"></script>
+{% endblock %}
