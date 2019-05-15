@@ -25,8 +25,13 @@
 
 ## 安装
 导入数据库
+
 `mysql -u root -p smart_cms < smart_cms.sql`
+
 使用pip安装：  
+
 `pip install -Ur requirements.txt`
+
 运行demo
+
 `python manage.py runserver`
